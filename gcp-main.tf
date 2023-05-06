@@ -3,7 +3,7 @@ module "sql-db" {
   version = "8.0.0"
 
   # The name of the database instance.
-  name = "dbhackgr1" 
+  name = "dbhackgr1instance" 
 
   # The region of the instance.
   region = var.region
@@ -37,11 +37,11 @@ resource "google_sql_database_instance" "dbhackgr1instance" {
     tier = "db-f1-micro"
   }
 
-  deletion_protection  = "true"
+  deletion_protection  = "false"
 }
 
-resource "google_sql_database" "dbhackgr1" {
-  name     = "dbhackgr1"
+resource "google_sql_database" "dbhackgr1-tf" {
+  name     = "dbhackgr1tf"
   instance = google_sql_database_instance.dbhackgr1.name
 }
 
