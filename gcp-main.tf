@@ -42,6 +42,6 @@ resource "google_sql_database_instance" "dbhackgr1instance" {
 
 resource "google_sql_database" "dbhackgr1-tf" {
   name     = "dbhackgr1tf"
-  instance = google_sql_database_instance.dbhackgr1.name
+  instance = google_sql_database_instance.dbhackgr1instance.name
 }
 
