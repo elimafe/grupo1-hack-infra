@@ -8,6 +8,8 @@ module "sql-db" {
   # The region of the instance.
   region = var.region
 
+  instance = google_sql_database_instance.dbhackgr1.name
+
   zone =var.zone
 
   # The database version of the instance.
@@ -20,6 +22,7 @@ module "sql-db" {
 }
 
 resource "google_artifact_registry_repository" "repogrupo1hack" {
+  provider = google
   location = var.region
   repository_id = "grupo-01-384720"
   description = "Imagens Docker"
