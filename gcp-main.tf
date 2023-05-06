@@ -3,19 +3,20 @@ module "sql-db" {
   version = "8.0.0"
 
   # The name of the database instance.
-  name = "module-dbhackgr1"
-
-  # The machine type of the instance.
-  machine_type = "db-f1-micro"
+  name = "module-dbhackgr1" 
 
   # The region of the instance.
   region = var.region
+
+  zone =var.zone
 
   # The database version of the instance.
   database_version = "MYSQL_8_0"
 
   # The deletion protection of the instance.
   deletion_protection = false
+  
+  project_id=var.project_id
 }
 
 resource "google_artifact_registry_repository" "repo-grupo1-hack" {
