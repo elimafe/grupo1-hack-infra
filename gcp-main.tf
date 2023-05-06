@@ -7,7 +7,6 @@ module "sql-db" {
 
   # The region of the instance.
   region = var.region
-
   instance = google_sql_database_instance.dbhackgr1.name
 
   zone =var.zone
